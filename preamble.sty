@@ -70,3 +70,19 @@
   \hspace{0cm}\name{#1}\name{#2}\par\hspace{0.2cm}\Large{#3}\par\textcolor{gray}{\rule{0.9\textwidth}{2pt}}}
 
 
+\newenvironment{cvinfo}[1]{
+  \headline{Contact}\vspace{0.1cm}}
+  {\vspace{0.6cm}}
+  
+\newenvironment{cvside}[1]{
+  \begin{minipage}[t]{#1}\vspace{0.5cm}}
+  {\end{minipage}}
+ 
+\newenvironment{leftside}[1][0.32\textwidth]{
+  \begin{cvside}{#1}}
+  {\end{cvside}}
+  
+\newenvironment{rightside}[1][0.61\textwidth]{
+  \begin{cvside}{#1}}
+  {\end{cvside}}
+

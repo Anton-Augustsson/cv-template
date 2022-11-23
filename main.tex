@@ -6,19 +6,18 @@
 %\titlewithimage{images/profile.png}{Anton}{Augustsson}{M.Sc. Student}
 \titlewithoutimage{Anton}{Augustsson}{M.Sc. Student}
 
-\begin{minipage}[t]{0.32\textwidth}
 
-  \vspace{0.5cm}
-  \headline{Contact}
-  \vspace{0.2cm}
+\begin{leftside}
+
+  \begin{cvinfo}{Contact}
   \contactitem{images/linkedin.png}{\scriptsize{\url{www.linkedin.com/in/anaug}}}
   \contactitem{images/github.png}{\scriptsize{\url{www.github.com/Anton-Augustsson}}}
   \contactitem{images/email.png}{\small{email address}}
   \contactitem{images/phone.png}{\small{phone number}}
   \contactitem{images/address.png}{\small{address}}
-  \vspace{0.6cm}
+  \end{cvinfo}
 
-  \headline{Skills}
+  \begin{cvinfo}{Skills}
   \skillitem{5}{Python}
   \skillitem{4}{C/C++}
   \skillitem{3}{JavaScript}
@@ -28,24 +27,23 @@
   \skillitem{3}{Back-End Development}
   \skillitem{3}{REST API and WebSockets}
   \skillitem{5}{Linux}
-  \vspace{0.6cm}
+  \end{cvinfo}
 
-  \headline{Education}
+  \begin{cvinfo}{Education}
   \small{M.Sc. Computer and Information}\par
   \small{Engineering at Uppsala University}\par
-  \vspace{0.1cm}
   \scriptsize{With a focus on embedded system}\par
-  \scriptsize{and software development}
-  \vspace{0.6cm}
+  \scriptsize{and software development}\par
+  \end{cvinfo}
 
-  \headline{Languages}
+  \begin{cvinfo}{Languages}
   \languageitem{5}{Swedish}
   \languageitem{4}{English}
+  \end{cvinfo}
 
-\end{minipage}
-\begin{minipage}[t]{0.61\textwidth}
+\end{leftside}
+\begin{rightside}
 
-  \vspace{0.5cm}
   \headline{Profile}
   \small{\lipsum[2]}
   \vspace{0.4cm}
@@ -60,7 +58,7 @@
   \workexperience{Company name}{Job title}{Jun 2021 - Aug 2021}
   \workdescription{\lipsum[4]}
 
-\end{minipage}
+\end{rightside}
   
 
 \end{document}
