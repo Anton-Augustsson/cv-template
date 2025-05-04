@@ -1,0 +1,87 @@
+%  preamble.sty   Anton Augustsson
+% 
+% Preamble files for cv 
+% To use this file 
+%  - \usepackage{preamble}
+
+\usepackage{vwcol, lipsum}
+\usepackage[margin=2cm, tmargin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usepackage{nopageno}  % Get rid of number pages
+\usepackage{lipsum}  % For generating text 
+
+
+%https://tex.stackexchange.com/questions/11390/drawing-stars-similar-with-tikz
+\usetikzlibrary{shapes.geometric}
+
+\newcommand\score[2]{
+  \pgfmathsetmacro\pgfxa{#1 + 1}
+  \tikzstyle{scorestars}=[star, star points=5, star point ratio=2.25, draw, inner sep=1.3pt, anchor=outer point 3]
+  \begin{tikzpicture}[baseline]
+    \foreach \i in {1, ..., #2} {
+      \pgfmathparse{\i<=#1 ? "black" : "white"}
+      \edef\starcolor{\pgfmathresult}
+      \draw (\i*1.75ex, 0) node[name=star\i, scorestars, fill=\starcolor]  {};
+   }
+  \end{tikzpicture}
+}
+
+
+\newenvironment{name}[1]{
+  \noindent\large{\textbf{#1}}}
+
+\newenvironment{headline}[1]{
+  \noindent\normalsize{\textbf{#1}}\par}
+
+\newenvironment{subheadline}[1]{
+  \noindent{\normalsize{\textbf{#1}}}\par}
+
+\newenvironment{workexperience}[3]{
+  \noindent{\normalsize{\textbf{#1 #2}}} \hfill \small{#3} \\}
+
+\newenvironment{workdescription}[1]{
+  \small{#1}\vspace{0.3cm}}
+
+
+%https://icons8.com/icons/set/linkedin  (non-free)
+%https://icons8.com/icons/set/github    (non-free)
+%https://icons8.com/icons/set/phone     (free)
+%https://icons8.com/icons/set/adress    (free)
+\newenvironment{contactitem}[2]{
+  #2 \includegraphics[height=0.35cm]{#1}\par}
+
+\newenvironment{skillitem}[2]{
+  \small{\score{#1}{5} #2}\par}
+
+\newenvironment{languageitem}[2]{
+  \small{\score{#1}{5} #2}\par}
+
+\newenvironment{titlewithimage}[4]{
+	\begin{tabular}{ m{3cm} m{6.5cm} } \includegraphics[width=0.25\textwidth]{#1} & \vspace{0.4cm}\name{#2}\name{#3}\par\vspace{0.2cm}\normalsize{#4}\par\textcolor{gray}{\rule{0\textwidth}{2pt}}  \end{tabular}}
+
+\newenvironment{titlewithoutimage}[3]{
+	\vspace{0.5cm}\Large{#1 #2}\par\hspace{0.2cm}\normalsize{\textcolor{Aquamarine}{#3}}\par}
+
+
+\newenvironment{cvinfo}[1]{
+  \headline{#1}\vspace{0.1cm}}
+  {\vspace{0.6cm}}
+  
+\newenvironment{cvside}[1]{
+  \begin{minipage}[t]{#1}}
+  {\end{minipage}}
+ 
+\newenvironment{leftside}[1][0.62\textwidth]{
+  \begin{cvside}{#1}}
+  {\end{cvside}}
+  
+\newenvironment{rightside}[1][0.38\textwidth]{
+  \begin{cvside}{#1}}
+  {\end{cvside}}
+

@@ -5,7 +5,7 @@
 %  - \usepackage{preamble}
 
 \usepackage{vwcol, lipsum}
-\usepackage[margin=1cm, tmargin=2cm]{geometry}
+\usepackage[margin=1cm, tmargin=1cm]{geometry}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{array}
@@ -62,8 +62,8 @@
 \newenvironment{languageitem}[2]{
   \small{\score{#1}{5} #2}\par}
 
-\newenvironment{titlewithimage}[4]{ % FIXME
-  \begin{tabular}{ m{6cm} m{6cm} } \includegraphics[width=0.25\textwidth]{#1} & \vspace{0.4cm}\name{#2}\name{#3}\vspace{0.2cm}\Large{#4}\par\textcolor{gray}{\rule{0.5\textwidth}{2pt}} \end{tabular}}
+\newenvironment{titlewithimage}[4]{
+  \begin{tabular}{ m{5.5cm} m{10cm} } \includegraphics[width=0.20\textwidth]{#1} & \vspace{0.4cm}\name{#2}\name{#3}\par\vspace{0.2cm}\Large{#4}\par\textcolor{gray}{\rule{0.6\textwidth}{2pt}} \end{tabular}}
 
 
 \newenvironment{titlewithoutimage}[3]{
@@ -71,7 +71,7 @@
 
 
 \newenvironment{cvinfo}[1]{
-  \headline{Contact}\vspace{0.1cm}}
+  \headline{#1}\vspace{0.1cm}}
   {\vspace{0.6cm}}
   
 \newenvironment{cvside}[1]{
