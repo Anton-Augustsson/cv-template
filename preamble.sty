@@ -43,7 +43,7 @@
   \noindent{\normalsize{\textbf{#1}}}\par}
 
 \newenvironment{workexperience}[3]{
-  \noindent{\normalsize{\textbf{#1 #2}}} \hfill \small{#3} \\}
+  \noindent{\normalsize{\textbf{#1}} - \small{#2}} \hfill \small{#3} \\}
 
 \newenvironment{workdescription}[1]{
   \small{#1}\vspace{0.3cm}}
@@ -86,3 +86,5 @@
   \begin{cvside}{#1}}
   {\end{cvside}}
 
+\newcommand{\shortmidrule}[2][0.5ex]{%
+  \raisebox{#1}{\rule{#2}{0.4pt}}}
